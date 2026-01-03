@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import useCartStore from "../store/cartStore";
 import HeroBanner from "../components/HeroBanner";
 import CategorySection from "../components/7/CategorySection";
-import { 
-  dairySubCategories, 
-  electronicsSubCategories, 
-  grocerySubCategories, 
-  kidsSubCategories, 
-  partySubCategories, 
-  studySubCategories 
+import {
+  dairySubCategories,
+  electronicsSubCategories,
+  grocerySubCategories,
+  kidsSubCategories,
+  partySubCategories,
+  studySubCategories
 } from "../data/categories";
 import DailyItems from "../components/4/DailyItems";
 import Category from "../components/1/Category";
@@ -26,11 +26,12 @@ const HomePage = () => {
 
   // 2. Data Mapping: Dynamically links category names to their imported data arrays
   const categoryDataMap = {
-    "Fruits": grocerySubCategories, 
-    "Vegetables": grocerySubCategories,
+    "Grocery": grocerySubCategories,
     "Dairy": dairySubCategories,
-    "Snacks": partySubCategories,
-    "Beverages": electronicsSubCategories,
+    "Study": studySubCategories,
+    "Party": partySubCategories,
+    "Kids": kidsSubCategories,
+    "Electronics": electronicsSubCategories,
   };
 
   // Get the subcategories for the current selection, default to empty array
@@ -54,17 +55,17 @@ const HomePage = () => {
       </div>
 
       {/* Main Category Bar */}
-      <Category 
-        activeCat={activeCategory} 
-        onCategoryChange={handleCategoryChange} 
+      <Category
+        activeCat={activeCategory}
+        onCategoryChange={handleCategoryChange}
       />
 
       {/* 4. Dynamic Subcategory Bar: Shows whenever a category with sub-items is selected */}
       {activeCategory !== "All" && currentSubItems.length > 0 && (
-        <Subcategory 
-          items={currentSubItems} 
-          activeSub={activeSubCategory} 
-          onSubChange={setActiveSubCategory} 
+        <Subcategory
+          items={currentSubItems}
+          activeSub={activeSubCategory}
+          onSubChange={setActiveSubCategory}
         />
       )}
 
@@ -113,10 +114,10 @@ const HomePage = () => {
           <p className="text-gray-500 mb-6 italic">
             Showing items for {activeCategory} {activeSubCategory ? `> ${activeSubCategory}` : ""}
           </p>
-          
+
           {/* Placeholder for filtered Product Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-             {/* ProductCard components would be mapped here in a future task */}
+            {/* ProductCard components would be mapped here in a future task */}
           </div>
         </div>
       )}

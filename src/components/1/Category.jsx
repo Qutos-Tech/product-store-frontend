@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 const categories = [
   { name: "All", icon: "⚡️" },
-  { name: "Fruits", icon: "🍎" },
-  { name: "Vegetables", icon: "🥦" },
+  { name: "Grocery", icon: "🛍️" },
   { name: "Dairy", icon: "🥛" },
-  { name: "Snacks", icon: "🍪" },
-  { name: "Beverages", icon: "🥤" },
+  { name: "Study", icon: "📚" },
+  { name: "Party", icon: "🎉" },
+  { name: "Kids", icon: "🧸" },
+  { name: "Electronics", icon: "🎧" },
 ];
 
 const Category = ({ activeCat, onCategoryChange }) => {
@@ -16,11 +17,10 @@ const Category = ({ activeCat, onCategoryChange }) => {
         <div
           key={cat.name}
           onClick={() => onCategoryChange(cat.name)}
-          className={`flex flex-col items-center justify-center min-w-[64px] cursor-pointer snap-start transition ${
-            activeCat === cat.name
-              ? "text-green-600 border-b-2 border-green-600"
-              : "text-gray-700"
-          }`}
+          className={`flex flex-col items-center justify-center min-w-[64px] cursor-pointer snap-start transition ${activeCat === cat.name
+            ? "text-green-600 border-b-2 border-green-600"
+            : "text-gray-700"
+            }`}
         >
           <span className="text-xl sm:text-2xl">{cat.icon}</span>
           <p className="text-xs sm:text-sm font-medium">{cat.name}</p>
@@ -29,11 +29,10 @@ const Category = ({ activeCat, onCategoryChange }) => {
       <Link
         to="/categories"
         onClick={() => onCategoryChange("See All →")}
-        className={`flex flex-col items-center justify-center min-w-[64px] cursor-pointer snap-start transition ${
-          activeCat === "See All →"
-            ? "text-green-600 border-b-2 border-green-600"
-            : "text-gray-700"
-        }`}
+        className={`flex flex-col items-center justify-center min-w-[64px] cursor-pointer snap-start transition ${activeCat === "See All →"
+          ? "text-green-600 border-b-2 border-green-600"
+          : "text-gray-700"
+          }`}
       >
         <p className="text-xs sm:text-sm font-medium">See All →</p>
       </Link>
