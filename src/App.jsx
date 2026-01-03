@@ -8,11 +8,13 @@ import SubCategoryPage from "./pages/SubCategoryPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
 import "./App.css"
+import LoginModal from "./components/LoginModal";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <LoginModal />
       <Routes>
         {/* Customer */}
         <Route path="/" element={<HomePage />} />
