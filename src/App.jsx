@@ -8,15 +8,19 @@ import SubCategoryPage from "./pages/SubCategoryPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
 import "./App.css"
+import LoginModal from "./components/LoginModal";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <LoginModal />
       <Routes>
         {/* Customer */}
         <Route path="/" element={<HomePage />} />
-
+         
+        <Route path="/profile" element={<ProfilePage />} />
         {/* Admin */}
         <Route path="/admin" element={<AdminDashboard />} />
 
