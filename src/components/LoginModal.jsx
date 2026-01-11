@@ -40,7 +40,7 @@ const LoginModal = () => {
 
         <div className="p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-green-600 mb-2">Sethji</h2>
+            <h2 className="text-3xl font-bold text-green-600 mb-2">General Store</h2>
             <p className="text-gray-500 text-sm">Welcome! Please sign in to continue.</p>
           </div>
 

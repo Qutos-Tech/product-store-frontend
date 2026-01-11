@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/">
         <h1 className="text-lg sm:text-2xl font-bold text-green-600 app-title cursor-pointer">
-          Sethji
+          General Store
         </h1>
       </Link>
 
