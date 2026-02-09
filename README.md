@@ -6,6 +6,7 @@ Unnecessary comments, spam PRs, or direct assignment requests will be closed.
 
 
 A **mini frontend clone inspired by Zepto** [Zepto.com](https://www.zepto.com/) , built using **React + Vite + Tailwind CSS**.  
+Take reference of ** [Zepto.com](https://www.zepto.com/) to understand User Story provided in document.
 This repository is used as a **real-world frontend internship project** where interns collaborate, contribute, and learn industry-standard workflows.
 
 ---
@@ -23,7 +24,7 @@ _Project Owner & Final Reviewer_
 The goal of this internship is to help students:
 
 - Work on a **real shared codebase**
-- Learn **GitHub collaboration**
+- Learn **Team collaboration**
 - Follow **professional frontend practices**
 - Build **portfolio-worthy projects**
 - Understand **code reviews & deployment**
@@ -33,7 +34,7 @@ The goal of this internship is to help students:
 ## 🧑‍🤝‍🧑 Team Structure & Repo Access
 
 - **Owner / Maintainer** → Qutos Team
-- **Core Devs / Interns** → Contributors  
+- **Core Devs / Interns** → Devs  
 
 🔒 **Direct pushes to `main` are not allowed**
 
@@ -61,16 +62,15 @@ feature/product-card
 
 ---
 
-## 🚀 Live Deployment (Netlify)
+## 🚀 Live Deployment
 
-- The project is hosted on **Netlify**
+- The project is hosted on **Cloud Host**
 - Every merged PR reflects on the **live site**
 - Pull Requests automatically generate **Preview Deployments**
 
 This allows interns to:
 - See their work live
 - Share preview URLs for review
-- Understand real-world CI/CD flow
 
 ---
 
@@ -88,11 +88,10 @@ You are encouraged to:
 
 ---
 
-## 📋 Task Assignment & Workflow
+## 📋 Workflow
 
-- Tasks are created using **GitHub Issues**
-- Each intern is assigned specific features/pages
-- **One task = One feature branch = One PR**
+- Changes are created using **GitHub Issues**
+- Interns will do the changes in codebase
 
 ### Pull Request Must Include
 
@@ -119,13 +118,8 @@ Mandatory practices:
 
 ## 📜 Internship Certificate Policy
 
-- Internship duration starts from the **Individual Contributions date**
 - **Internship certificate will be issued within 20–30 days**
   **after successful completion** of the internship
-  
-- Certificate will be issued **only if**:
-  - Pull Requests are merged
-  - Code quality and participation are satisfactory
 
 ❌ No certificate will be issued for inactive or incomplete participation.
 
@@ -136,7 +130,6 @@ Mandatory practices:
 Each intern must submit:
 
 - List of merged Pull Requests
-- Live Netlify preview links
 - Short explanation of individual contributions
 
 These will help interns build a **strong frontend portfolio**.
@@ -147,10 +140,8 @@ These will help interns build a **strong frontend portfolio**.
 
 Interns will be evaluated based on:
 
-- Code quality
 - Consistency and discipline
 - Collaboration with the team
-- Pull Request quality
 - Willingness to learn and improve
 
 ---
@@ -178,16 +169,9 @@ If no feature is assigned:
 
 ---
 
-## ⏳ Inactivity Policy
-
-- **10 days without contribution** → Internship may be discontinued
-- Exceptions are allowed **only with prior notice**
-
----
-
 ## 🤝 Contribution Agreement
 
-By contributing to this repository, interns agree to:
+By contributing to this Codebase, interns agree to:
 
 - Follow all guidelines mentioned above
 - Respect code reviews and teammates
