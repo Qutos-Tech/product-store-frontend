@@ -1,35 +1,17 @@
-import React, { useState, useEffect } from "react";
 import ProductCard from "../ProductCard";
 import { newProducts } from "../../data/products";
 
-
 const FeaturedProducts = () => {
-  // const [featured, setFeatured] = useState([]);
-
-  // useEffect(() => {
-  //   // Filter featured/top-selling products
-  //   const topProducts = dummyFeatured.filter(
-  //     (p) => p.isFeatured || p.topSelling
-  //   );
-  //   setFeatured(topProducts);
-  // }, []);
-
-  // if (featured.length === 0) return null;
-
   return (
-    <section className="px-3 py-4">
-      <h2 className="text-lg sm:text-xl font-bold mb-3">Featured Products</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <section className="px-4 py-4 bg-gray-50">
+      <div className="flex items-center justify-between mb-3">
+        <h2 className="text-base font-bold text-gray-800">Featured Products</h2>
+      </div>
+
+      {/* 2 cols mobile → 3 sm → 4 md → 5 lg */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {newProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={{
-              id: product.id,
-              name: product.name,
-              price: product.price,
-              img: product.img,
-            }}
-          />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </section>
