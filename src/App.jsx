@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminLoginPage from "./pages/AdminLoginPage";
 import StaffDashboard from "./pages/StaffDashboard";
 import Navbar from "./components/Navbar";
 import CartPage from "./pages/CartPage";
@@ -15,16 +16,17 @@ import MaintenanceCard from "./components/MaintenanceCard";
 function App() {
   return (
     <Router>
-      <MaintenanceCard/>
+      <MaintenanceCard />
       <Navbar />
       <LoginModal />
       <Routes>
         {/* Customer */}
         <Route path="/" element={<HomePage />} />
-         
+
         <Route path="/profile" element={<ProfilePage />} />
         {/* Admin */}
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
 
         {/* Staff */}
         <Route path="/staff" element={<StaffDashboard />} />
