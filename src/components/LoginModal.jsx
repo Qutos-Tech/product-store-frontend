@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Close, Smartphone, ArrowForward } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { Close, Smartphone, ArrowForward, AdminPanelSettings } from "@mui/icons-material";
 import useAuthStore from "../store/authStore";
 
 const LoginModal = () => {
   const { isLoginModalOpen, setLoginModal, setAuth } = useAuthStore();
   const [mobile, setMobile] = useState("");
+  const navigate = useNavigate();
 
   if (!isLoginModalOpen) return null;
 
@@ -20,10 +22,15 @@ const LoginModal = () => {
     }
   };
 
+  const handleAdminRedirect = () => {
+    setLoginModal(false);
+    navigate("/admin/login");
+  };
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Background Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={() => setLoginModal(false)}
       ></div>
@@ -31,7 +38,7 @@ const LoginModal = () => {
       {/* Card */}
       <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl relative z-10 overflow-hidden transform transition-all duration-300 scale-100">
         {/* Close Button */}
-        <button 
+        <button
           onClick={() => setLoginModal(false)}
           className="absolute right-5 top-5 text-gray-400 hover:text-gray-800 transition-colors"
         >
@@ -72,10 +79,19 @@ const LoginModal = () => {
             </button>
           </form>
 
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <button
+              onClick={handleAdminRedirect}
+              className="w-full flex items-center justify-center gap-2 text-xs font-bold text-slate-400 hover:text-green-600 transition-colors uppercase tracking-widest"
+            >
+              <AdminPanelSettings fontSize="small" /> Login as Administrator
+            </button>
+          </div>
+
           <p className="mt-8 text-center text-[10px] text-gray-400 px-4">
-            By clicking "Get Started", you agree to our 
-            <span className="text-gray-600 font-medium cursor-pointer mx-1">Terms</span> 
-            and 
+            By clicking "Get Started", you agree to our
+            <span className="text-gray-600 font-medium cursor-pointer mx-1">Terms</span>
+            and
             <span className="text-gray-600 font-medium cursor-pointer mx-1">Privacy Policy</span>.
           </p>
         </div>
