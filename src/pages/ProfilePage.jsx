@@ -1,10 +1,16 @@
-import { useState } from "react";
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
 import useAuthStore from "../store/authStore";
 import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const { user, logout, setLoginModal } = useAuthStore();
+  
+  const profile = {
+    name: user?.name || "Customer",
+    email: user?.email || "Not added yet",
+    phone: user?.phone || user?.mobile || "",
+  };
+  
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("orders");
 
@@ -15,12 +21,6 @@ const ProfilePage = () => {
       setLoginModal(true); // Automatically show the login pop-up
     }
   }, [user, navigate, setLoginModal]);
-  
-  const user = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-    phone: "+91 9876543210",
-  };
 
   if (!user) return null; // Don't render anything while redirecting
 
@@ -65,12 +65,12 @@ const ProfilePage = () => {
             <div className="flex flex-col items-center text-center">
 
               <div className="w-24 h-24 rounded-full bg-green-200 flex items-center justify-center text-3xl font-bold text-green-700">
-                {user.name.charAt(0)}
+                {profile.name?.[0]?.toUpperCase()}
               </div>
 
-              <h2 className="mt-4 text-xl font-semibold">{user.name}</h2>
-              <p className="text-gray-500">{user.email}</p>
-              <p className="text-gray-500">{user.phone}</p>
+              <h2 className="mt-4 text-xl font-semibold">{profile.name}</h2>
+              <p className="text-gray-500">{profile.email}</p>
+              <p className="text-gray-500">{profile.phone}</p>
 
               <button className="mt-6 w-full py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition">
                 Edit Profile
