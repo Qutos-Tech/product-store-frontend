@@ -1,13 +1,28 @@
 import { useState } from "react";
+import React, { useEffect } from "react";
+import useAuthStore from "../store/authStore";
+import { useNavigate } from "react-router-dom";
 
-const Profile = () => {
+const ProfilePage = () => {
+  const { user, logout, setLoginModal } = useAuthStore();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("orders");
 
+  // PROTECTION LOGIC: If no user is found, redirect home and open login
+  useEffect(() => {
+    if (!user) {
+      navigate("/"); // Send them back to the home page
+      setLoginModal(true); // Automatically show the login pop-up
+    }
+  }, [user, navigate, setLoginModal]);
+  
   const user = {
     name: "John Doe",
     email: "john.doe@example.com",
     phone: "+91 9876543210",
   };
+
+  if (!user) return null; // Don't render anything while redirecting
 
   const orders = [
     {
@@ -61,7 +76,12 @@ const Profile = () => {
                 Edit Profile
               </button>
 
-              <button className="mt-3 text-red-500 hover:underline">
+              <button
+                onClick={() => {
+                  logout();
+                  navigate("/");
+                }}
+                className="mt-3 text-red-500 hover:underline">
                 Sign Out
               </button>
             </div>
@@ -161,4 +181,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;
