@@ -54,10 +54,21 @@ const Navbar = () => {
             <Link to="/profile">
               <Person className="text-green-600" />
             </Link>
-          ) : (
-            // If not logged in, clicking triggers the login pop-up
-            <Person className="text-gray-600 hover:text-green-600" />
-          )}
+          ):null}
+          <div
+            className="flex items-center justify-center p-1 rounded-full hover:bg-green-50 transition-all cursor-pointer"
+            onClick={() => (user ? null : setLoginModal(true))} // Open modal only if not logged in
+          >
+            {user ? (
+              // If logged in, show the green icon (or link to profile)
+              <Link to="/profile">
+                <Person className="text-green-600" />
+              </Link>
+            ) : (
+              // If not logged in, clicking triggers the login pop-up
+              <Person className="text-gray-600 hover:text-green-600" />
+            )}
+          </div>
         </div>
       </div>
     </nav>
